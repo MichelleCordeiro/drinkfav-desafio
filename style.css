@@ -57,7 +57,7 @@ body * {
 
 #app {
   max-width: 900px;
-  max-height: 970px;
+  max-height: 790px;
   
   margin: 0 auto;
   padding-inline: 4rem;
@@ -139,7 +139,7 @@ header {
 /* simula borda c radius na tabela */
 #border-table {
   max-width: 815px;
-  max-height: 790px;
+  max-height: 680px;
 
   background: var(--bg-primary);
   padding: 0.1rem;
@@ -200,7 +200,7 @@ table td:nth-child(4) {
 
 table tbody {
   max-width: 813px;
-  max-height: 720px;
+  max-height: 615px;
   overflow: auto;
 
   display: flex;
@@ -464,7 +464,7 @@ svg.active .svg-elem-9 {
   }
 
   table tbody {
-    max-height: 800px;
+    max-height: 580px;
   }
 
   table thead tr th:nth-child(2),
@@ -492,6 +492,10 @@ svg.active .svg-elem-9 {
 
   #btn-fav {
     min-width: 30%;
+  }
+
+  table tbody {
+    max-height: 530px;
   }
 
   table thead tr th:nth-child(2),
