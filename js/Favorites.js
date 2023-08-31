@@ -1,12 +1,10 @@
 import { APIDrink } from './APIDrink.js';
-// import './modal.js'
 
 // manipulação dos dados
 export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root);
     this.load();
-    // APIDrink.search('Mojito').then(item => console.log('APIDrink: ', item))
   }
 
   load() {
@@ -24,7 +22,6 @@ export class Favorites {
       const drinkExists = this.entries.find(entry => {
         let drinkHas = entry.name;
 
-        // lógica diferente pq é trazido da API o primeiro resultado contendo a palavra buscada, e não a palvra exata
         if (drinkHas === drinkname || drinkHas.includes(drinkname)) {
           return true;
         }
@@ -37,10 +34,6 @@ export class Favorites {
 
       const drinksearch = await APIDrink.search(drinkname);
 
-      if (drinksearch === undefined) {
-        throw new Error('Drink não encontrado!');
-      }
-
       this.entries = [drinksearch, ...this.entries];
       this.update();
       this.save();
@@ -52,7 +45,6 @@ export class Favorites {
 
   delete(drink) {
     const filteredEntries = this.entries.filter(entry => entry.name !== drink.name);
-    // filter só retorna se for true, retornará users diferentes ao clicado p excluir
 
     this.entries = filteredEntries;
     this.update();
@@ -99,7 +91,6 @@ export class FavoritesView extends Favorites {
     const ingredients = ingredientsString.split(' + ');
 
     ingredients.forEach(ingred => {
-      // this.createIngredientModal()
 
       const img = document.createElement('div');
       img.innerHTML = `
@@ -174,7 +165,6 @@ export class FavoritesView extends Favorites {
   }
 
   createRow() {
-    // precisa criar o tr pela dom
     const tr = document.createElement('tr');
     tr.addEventListener('click', this.updateModal);
 
